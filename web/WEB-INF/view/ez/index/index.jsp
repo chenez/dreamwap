@@ -23,7 +23,7 @@
     <meta name="keywords" content="职业规划成功指数">
     ‍<meta name="generator" content="Hbuilder tool" />
     <meta name="author" content="陈恩泽">
-    <title>职业规划成功指数</title>
+    <title>${title}</title>
     <link rel="stylesheet" type="text/css" href="/static/css/build.css">
     <script type="text/javascript" src="/static/js/jquery-2.0.3.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/layui/layui.js" charset="utf-8"></script>
@@ -34,7 +34,6 @@
             var layer = layui.layer
                     ,form = layui.form()
                     ,$ = layui.jquery;
-
         });
         //点击开始测试按钮
         function kscs(){
@@ -50,7 +49,6 @@
         };
         //点击立即提交按钮
         function ljtj(){
-
             var one=$("input[name='one']:checked").val();
             var two=$("input[name='two']:checked").val();
             var three=$("input[name='three']:checked").val();
@@ -63,6 +61,7 @@
                 alert("您还有题目有没有选择！");
             }else{
                 $(window).scrollTop(0);
+                //document.title="您的职业规划成功指数为10%";
                 var node2=$('#contain2');
                 var node3=$('#contain3');
                 if(node2.is(':visible') && node3.is(':hidden')){　　//如果node是隐藏的则显示node元素，否则隐藏　　
@@ -72,35 +71,44 @@
                     node2.show();
                     node3.hide();
                 }
-
                 var onesixfour=parseInt(one)+parseInt(six)+parseInt(four);
                 var threeight=parseInt(three)+parseInt(eight);
                 var fivetwoseven=parseInt(five)+parseInt(two)+parseInt(seven);
+                var sharetitle="";
                 if(onesixfour >= 2 && fivetwoseven >= 2 && threeight >=1){
                     $("#one").show();
+                    sharetitle="10%";
                 }else if(onesixfour >= 2 && fivetwoseven >= 2 && threeight < 1){
                     $("#twoone").show();
+                    sharetitle="10%";
                 }else if(onesixfour >= 2 && fivetwoseven < 2 && threeight >= 1){
                     $("#twotwo").show();
+                    sharetitle="10%";
                 }else if(onesixfour < 2 && fivetwoseven >= 2 && threeight >= 1){
                     $("#twothree").show();
+                    sharetitle="10%";
                 }else if(onesixfour < 2 && fivetwoseven >= 2 && threeight <1){
                     $("#three").show();
+                    sharetitle="10%";
                 }else if(onesixfour < 2 && fivetwoseven < 2 && threeight >= 1){
                     $("#four").show();
+                    sharetitle="10%";
                 }else if(onesixfour >= 2 && fivetwoseven < 2 && threeight <1){
                     $("#five").show();
+                    sharetitle="10%";
                 }else if(onesixfour == 1 && fivetwoseven == 1 && threeight == 0){
                     $("#six").show();
+                    sharetitle="10%";
                 }else if(onesixfour == 0 && fivetwoseven == 0 && threeight == 0){
                     $("#seven").show();
+                    sharetitle="10%";
                 }else{//没有符合条件的显示第三个
                     $("#three").show();
+                    sharetitle="10%";
                 }
+                $("title").html("您的职业规划成功指数为"+sharetitle);
             }
         };
-
-
     </script>
 </head>
 <!--分享链接缩略图-->
@@ -533,7 +541,69 @@
 
 </script>
 <%--接入微信分享按钮 start--%>
-<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" charset="utf-8"></script>
+<%--<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" charset="utf-8"></script>--%>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var shareImg = "${basePath}/static/images/suoluetu.png";
+    var WxShareUrl= "${basePath}";
+    var shareTitle= $("title").text();
+    console.log("go to wx config");
+    wx.config({"debug":false,"beta":true,"appId":"wx550ea12d6f8f4dd1","nonceStr":"rand_58ece1e04ada7","timestamp":1491919328,"url":"http:\/\/qz.getitdone.top\/quiz\/load\/1537161\/?rd=1&from=timeline&isappinstalled=0","signature":"ecbd81959989bf9d26259763e0d87552d4ab0f5d","jsApiList":["onMenuShareAppMessage","onMenuShareTimeline"]});
+   /* wx.ready(
+        function(){
+            console.log("wx config successed");
+            bindWxShare(shareTitle,shareImg,WxShareUrl);
+        }
+    );*/
+    wx.onMenuShareTimeline({
+        title: shareTitle, // 分享标题
+        link: WxShareUrl, // 分享链接
+        //imgUrl: shareImg, // 分享图标
+        success: function () {
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    wx.onMenuShareAppMessage({
+        title: shareTitle, // 分享标题
+        link: WxShareUrl, // 分享链接
+        imgUrl: shareImg, // 分享图标
+        success: function () {
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    /*function bindWxShare(shareTitle, shareImg, WxShareUrl){
+        alert(shareTitle+shareImg+WxShareUrl);
+        console.log(shareTitle);
+        wx.onMenuShareTimeline({
+            title: shareTitle, // 分享标题
+            link: WxShareUrl, // 分享链接
+            //imgUrl: shareImg, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareAppMessage({
+            title: shareTitle, // 分享标题
+            link: WxShareUrl, // 分享链接
+            imgUrl: shareImg, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    }*/
+</script>
 <%--接入微信分享按钮 end --%>
 </body>
 

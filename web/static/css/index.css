@@ -1,0 +1,207 @@
+body {
+  font-family: "microsoft yahei";
+  background: #fafafa;
+}
+.picker-item {
+  font-size: 16px !important;
+}
+.image-wrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.image-wrap img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+.page_index {
+  background: url(../images/bg.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+.page_index .bg {
+  background: url(../images/cd_03.png) no-repeat 0 0;
+  width: 14.976rem;
+  height: 19.392rem;
+  background-size: cover;
+  margin: 0.21333333rem auto 0 auto;
+}
+.page_index .bt {
+  background: url(../images/cd_07.png) no-repeat 0 0;
+  width: 10.66666667rem;
+  height: 1.49333333rem;
+  background-size: cover;
+  margin: 1.06666667rem auto;
+  display: block;
+}
+.page_index .ft {
+  font-size: 0.512rem;
+  color: black;
+  margin-top: 2.13333333rem;
+  text-align: center;
+}
+ /*public start*/
+ 
+ .fter1 {
+ 	font-size: 14px!important;
+ 	position: absolute;
+ 	bottom: 0px;
+ 	width: 100%;
+ 	color: black;
+ 	text-align: center;
+ }
+ 
+ .fter {
+ 	font-size: 14px!important;
+ 	margin-top: -30px!important;
+ 	color: black;
+ 	text-align: center;
+ }
+ /*public end*/
+ /*.page_index ,html{
+			height: 100%;
+		}*/
+ /*.button-zdy.button-primary {
+            border-color: #81a7cc;
+            background: -webkit-gradient(linear, left top, left bottom, from(#81a7cc), to(#81a7cc));
+            background: linear-gradient(#81a7cc, #81a7cc);
+        }*/
+ 
+ .button-zdy.button-primary {
+ 	border-color: #009688;
+ 	background: -webkit-gradient(linear, left top, left bottom, from(#009688), to(#009688));
+ 	background: linear-gradient(#009688, #009688);
+ }
+ 
+ .logo-w {
+ 	width: 100%;
+ }
+ 
+ .logo-w img {
+ 	width: 60%;
+ 	/*	padding-top: 100px;*/
+ padding-top: 160px;
+ }
+ 
+ .ljcy {
+ 	width: 80%;
+ 		/*	margin: 50px auto 0 auto;*/
+ margin: 50px auto 0 auto;
+ }
+ 
+ .ljcy a {
+ 	width: 100%;
+ }
+ 
+ #contain1 h2 {
+ 	/*padding-top: 110px;*/
+ 		padding-top: 50px;
+ }
+ 
+ h2 {
+ 	text-align: center;
+ 	font-size: 24px!important;
+ }
+ 
+ .layui-elem-quote {
+ 	margin-bottom: 0px!important;
+ }
+ 
+ .comtainer {
+ 	padding: 10px 10px 80px 10px;
+ }
+ 
+ .whitebg {
+ 	background-color: #FFFFFF!important;
+ }
+ 
+ .layui-form-item button {
+ 	margin-top: 40px;
+ 	width: 80%;
+ }
+ 
+ .layui-form-pane .layui-input-block {
+ 	margin-left: 0px!important;
+ }
+ 
+ .layui-input-block {
+ 	margin-left: 0px!important;
+ }
+ 
+ .whitebg {
+ 	background-color: #FFFFFF;
+ }
+ 
+ .texindext {
+ 	padding-bottom: 5px;
+ 	text-indent: 2em;
+ 	line-height: 22px;
+ }
+ 
+ .texindextab {
+ 	padding-bottom: 5px;
+ 	text-indent: 2em;
+ 	line-height: 22px;
+ }
+ 
+ .texindext a {
+ 	color: #009688;
+ }
+ 
+ .texindext a:hover {
+ 	color: #12cdbc;
+ }
+ 
+ .star-warm {
+ 	color: #F7B824;
+ }
+ .bold{
+ 	font-weight: bold;
+ }
+.half{
+	width: 40%;
+}
+.mt10{
+	margin-top: 10px;
+}
+.pb5{
+	padding-bottom: 5px;
+}
+.eightp{
+	width: 80%;
+}
+.center{
+	text-align: center;
+}
+p a i{
+	padding-right: 5px;
+}
+#share {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    color: rgb(255, 255, 255);
+    font-size: medium;
+    font-family: 黑体;
+    background: none 0% 0% repeat scroll rgba(0, 0, 0, 0.8);
+}
+#share .goup {
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    height: 11%;
+}
+#share .title {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+}

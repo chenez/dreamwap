@@ -23,7 +23,7 @@
     <meta name="keywords" content="职业规划成功指数">
     ‍<meta name="generator" content="Hbuilder tool" />
     <meta name="author" content="陈恩泽">
-    <title>职业规划成功指数</title>
+    <title>${title}</title>
     <link rel="stylesheet" type="text/css" href="/static/css/build.css">
     <script type="text/javascript" src="/static/js/jquery-2.0.3.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/layui/layui.js" charset="utf-8"></script>
@@ -34,7 +34,6 @@
             var layer = layui.layer
                     ,form = layui.form()
                     ,$ = layui.jquery;
-
         });
         //点击开始测试按钮
         function kscs(){
@@ -533,6 +532,71 @@
 
 </script>
 
+<%--接入微信分享按钮 start--%>
+<%--<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" charset="utf-8"></script>--%>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var shareImg = "${basePath}/static/images/suoluetu.png";
+    var WxShareUrl= "${basePath}";
+    var shareTitle= $("title").text();
+    console.log("go to wx config");
+    wx.config({"debug":false,"beta":true,"appId":"wx550ea12d6f8f4dd1","nonceStr":"rand_58ece1e04ada7","timestamp":1491919328,"url":"http:\/\/qz.getitdone.top\/quiz\/load\/1537161\/?rd=1&from=timeline&isappinstalled=0","signature":"ecbd81959989bf9d26259763e0d87552d4ab0f5d","jsApiList":["onMenuShareAppMessage","onMenuShareTimeline"]});
+   /* wx.ready(
+        function(){
+            console.log("wx config successed");
+            bindWxShare(shareTitle,shareImg,WxShareUrl);
+        }
+    );*/
+    wx.onMenuShareTimeline({
+        title: shareTitle, // 分享标题
+        link: WxShareUrl, // 分享链接
+        //imgUrl: shareImg, // 分享图标
+        success: function () {
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    wx.onMenuShareAppMessage({
+        title: shareTitle, // 分享标题
+        link: WxShareUrl, // 分享链接
+        imgUrl: shareImg, // 分享图标
+        success: function () {
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    /*function bindWxShare(shareTitle, shareImg, WxShareUrl){
+        alert(shareTitle+shareImg+WxShareUrl);
+        console.log(shareTitle);
+        wx.onMenuShareTimeline({
+            title: shareTitle, // 分享标题
+            link: WxShareUrl, // 分享链接
+            //imgUrl: shareImg, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareAppMessage({
+            title: shareTitle, // 分享标题
+            link: WxShareUrl, // 分享链接
+            imgUrl: shareImg, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    }*/
+</script>
+<%--接入微信分享按钮 end --%>
 </body>
 
 </html>

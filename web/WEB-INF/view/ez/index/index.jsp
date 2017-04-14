@@ -532,9 +532,7 @@
     });
 
 </script>
-<%--接入微信分享按钮 start--%>
-<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" charset="utf-8"></script>
-<%--接入微信分享按钮 end --%>
+
 </body>
 
 </html>

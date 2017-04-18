@@ -540,7 +540,16 @@
     var WxShareUrl= "${basePath}";
     var shareTitle= $("title").text();
     console.log("go to wx config");
-    wx.config({"debug":false,"beta":true,"appId":"wx550ea12d6f8f4dd1","nonceStr":"rand_58ece1e04ada7","timestamp":1491919328,"url":"http:\/\/qz.getitdone.top\/quiz\/load\/1537161\/?rd=1&from=timeline&isappinstalled=0","signature":"ecbd81959989bf9d26259763e0d87552d4ab0f5d","jsApiList":["onMenuShareAppMessage","onMenuShareTimeline"]});
+    wx.config({
+        "debug":false,
+        "beta":true,
+        "appId":"wx550ea12d6f8f4dd1",
+        "nonceStr":"rand_58ece1e04ada7",
+        "timestamp":1491919328,
+        "url":"http:\/\/qz.getitdone.top\/quiz\/load\/1537161\/?rd=1&from=timeline&isappinstalled=0",
+        "signature":"ecbd81959989bf9d26259763e0d87552d4ab0f5d",
+        "jsApiList":["onMenuShareAppMessage","onMenuShareTimeline"]
+    });
    /* wx.ready(
         function(){
             console.log("wx config successed");
